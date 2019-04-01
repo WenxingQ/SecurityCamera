@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.qiuthurman</groupId>
+<artifactId>HomeSecurity</artifactId>
+<packaging>jar</packaging>
+<version>1.0.0</version>
+<name>HomeSecurity</name>
+<url>http://maven.apache.org</url>
+<properties>
+    <jdk.version>1.8</jdk.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+<dependencies>
+    <dependency>
+        <groupId>com.sparkjava</groupId>
+        <artifactId>spark-core</artifactId>
+        <version>2.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.21</version>
+    </dependency>
+    <dependency>
+        <groupId>com.j2html</groupId>
+        <artifactId>j2html</artifactId>
+        <version>1.3.0</version>
+    </dependency>
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>jquery</artifactId>
+        <version>3.3.1</version>
+    </dependency>
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.2</version>
+    </dependency>
+</dependencies>
+<build>
+    <plugins>
+        <plugin>
+            <!--  specify the java version to use during compilation  -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+                <source>${jdk.version}</source>
+                <target>${jdk.version}</target>
+            </configuration>
+        </plugin>
+        <plugin>
+            <!--  populates the properties for dependency jar paths   -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>2.9</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>properties</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.17</version>
+            <configuration>
+                <useSystemClassLoader>true</useSystemClassLoader>
+                <testFailureIgnore>true</testFailureIgnore>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+</project>
