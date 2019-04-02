@@ -1,0 +1,1 @@
+curl -v -X PUT -T $1 https://objectstorage.us-ashburn-1.oraclecloud.com/p/9BbTA5W87E0sF3ru03G5xd8xO_oUmVyfVNokqK-xKnU/n/wenxingqiu/b/bucket-1/o/
